@@ -4,12 +4,12 @@ const User = db.user;
 const Phone = db.phone;
 
 exports.findOne = (req, res) => {
-    if(!req.query.user_id){
-        res.status(400).send({ message: "Bad request, no query params found" });
+    if(!req.params.user_id){
+        res.status(400).send({ message: "Bad request, no params found" });
         return;
     }
     User.findOne({
-        _id: req.query.user_id
+        _id: req.params.user_id
     })
         .exec((err, user) => {
             if (err) {

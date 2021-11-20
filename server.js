@@ -6,6 +6,8 @@ const app = express();
 
 const db = require("./app/models");
 const dbConfig = require("./app/config/db.config");
+const envModes = require("./app/config/enviroment.config");
+const dotenv = require('dotenv');
 
 
 var corsOptions = {
@@ -32,7 +34,7 @@ db.mongoose
   .catch(err => {
     console.error("Connection error", err);
     process.exit();
-  });
+  }); 
 
 // simple route
 app.get("/", (req, res) => {
@@ -45,6 +47,14 @@ require('./app/routes/user.routes')(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}.`);
-});
+dotenv.config();
+console.log('env: ', process.env.NODE_ENV);
+if( process.env.NODE_ENV === "dev"){
+  console.log(`Server will run on port ${PORT}.`);
+  module.exports = app;
+} else {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}.`);
+  });
+}
+

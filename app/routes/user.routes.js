@@ -9,5 +9,5 @@ module.exports = function (app) {
         );
         next();
     });
-    app.get("/api/user/search", [authJwt.verifyToken], controller.findOne);
+    app.get("/api/user/search/:user_id", [authJwt.verifyToken], controller.findOne);
 };

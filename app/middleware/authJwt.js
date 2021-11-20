@@ -5,7 +5,6 @@ const User = db.user;
 const Role = db.role;
 
 verifyToken = (req, res, next) => {
-
   if (!req.headers.authorization) {
     return res.status(403).send({ message: "Not authorized" });
   }
