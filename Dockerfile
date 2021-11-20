@@ -16,4 +16,4 @@ EXPOSE 3000
 
 RUN npm install -g nodemon 
 
-CMD [ "npm", "run", "start" ]
+CMD [ "npm", "run", "prod" ]
