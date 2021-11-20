@@ -26,9 +26,7 @@ exports.signup = (req, res) => {
         return;
     }
     const phones = req.body.phones;
-    console.log('PHONES:', phones);
     Phone.insertMany(phones).then(phones => {
-        console.log('resultado phones: ', phones);
         user.phones = phones.map(phone => phone._id);
         user.save((err, user) => {
             if (err) {
