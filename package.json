@@ -4,8 +4,8 @@
   "description": "backend application that will expose a sing up/sign in RESTful API.",
   "main": "server.js",
   "scripts": {
-    "windowsprod": "set NODE_ENV=prod&& node server.js",
-    "windowstest": "set NODE_ENV=dev&& node node_modules/jest/bin/jest.js"
+    "start": "NODE_ENV=prod node server.js",
+    "test": "NODE_ENV=test node node_modules/jest/bin/jest.js"
   },
   "keywords": [
     "node.js",

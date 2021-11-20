@@ -32,7 +32,7 @@ describe('Routes Testing', function () {
                     ddd: "22"
                 },
                 {
-                    "number": "123498765",
+                    number: "123498765",
                     ddd: "33"
                 }
             ]
