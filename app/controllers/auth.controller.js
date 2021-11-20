@@ -90,11 +90,7 @@ exports.signin = (req, res) => {
             expiresIn: 1800 // 24 hours
         });
         const date = new Date();
-        var endDate = date;
-        var startdate = new Date(endDate);
-        var durationInMinutes = 30;
-        startdate.setMinutes(endDate.getMinutes() - durationInMinutes);
-        User.findByIdAndUpdate(user._id, { token: token, update_date: date, last_login: startdate }).then(modifiedUser => {
+        User.findByIdAndUpdate(user._id, { token: token, update_date: date, last_login: date }).then(modifiedUser => {
             res.status(200).send({
                 id: modifiedUser._id,
                 creation_date: modifiedUser.creation_date,

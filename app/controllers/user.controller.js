@@ -23,7 +23,6 @@ exports.findOne = (req, res) => {
             }
             const currentDate = new Date();
             const dateDifference = parseInt(Math.abs(currentDate.getTime() - user.last_login.getTime()) / (1000 * 60) % 60);
-            console.log('date difference: ', dateDifference);
             if( dateDifference >= 30){
                 res.status(401).send({ message: "Invalid session" });
                 return;
