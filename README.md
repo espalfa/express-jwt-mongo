@@ -9,3 +9,9 @@ This api works with the following:
   - Mongo
   - Hashed passwords
   - Loosely-coupled interchangeable components
+
+Requeriments:
+  This proyect needs docker to be installed
+
+To run this project from terminal run:
+  npm run start
