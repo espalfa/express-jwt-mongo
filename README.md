@@ -15,3 +15,13 @@ Requeriments:
 
 To run this project from terminal run:
   npm run start
+
+
+Now you can access to http://localhost:8080/ to check if everything is in order
+
+There're only 3 endpoints
+
+  */api/auth/signup
+  */api/auth/signin
+  */api/user/search/user_id
+
